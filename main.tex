@@ -2,20 +2,19 @@
 \usepackage{packages}
 
 \begin{document}
-  \pagenumbering{roman}
+  \frontmatter
   \include{cnabstract}
   \include{enabstract}
   \tableofcontents
-  \thispagestyle{empty}
-  \newpage
+  
   \ctexset{
-    section/titleformat = \raggedright,
+    chapter/titleformat = \raggedright,
     % name = \$,
     % number = \chinese{section}
   }
 
   % \listofsources
-  \pagenumbering{arabic}
+  \mainmatter
   \include{introduction}
 
   \include{chapter1}
