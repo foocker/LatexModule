@@ -1,0 +1,28 @@
+\documentclass{ctexbook}
+\usepackage{packages}
+
+\begin{document}
+  \pagenumbering{roman}
+  \include{cnabstract}
+  \include{enabstract}
+  \tableofcontents
+  \thispagestyle{empty}
+  \newpage
+  \ctexset{
+    section/titleformat = \raggedright,
+    % name = \$,
+    % number = \chinese{section}
+  }
+
+  % \listofsources
+  \pagenumbering{arabic}
+  \include{introduction}
+
+  \include{chapter1}
+  \include{chapter2}
+  % \bibliography{/ref/npzn.bib}
+  % \include{acknowledegement}
+  % \include{enabstract}
+  \include{reference}
+  \end{document}
+

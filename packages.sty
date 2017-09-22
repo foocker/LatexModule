@@ -1,0 +1,47 @@
+\ProvidesPackage{packages}
+
+%------基本工具包------
+\RequirePackage{amssymb,amsmath,amsthm}
+\RequirePackage{colortbl,xcolor,tabularx,multirow}
+\RequirePackage{graphicx,float}
+\RequirePackage{hologo,verbatim,fancyvrb,multicol} % ,layouts  It's typically used during document design processes
+\RequirePackage{makeidx,fancyhdr,titletoc}
+\RequirePackage[all]{xy}
+\RequirePackage{tikz}
+\RequirePackage{cite}
+\RequirePackage{hyperref}
+\hypersetup{colorlinks,%
+  bookmarksnumbered=true,%
+  pdfstartview=FitH}
+
+% -----版式设置 -----fancyhdr
+% \pagestyle{myheadings} % 页眉内容可自定义,无页脚
+\fancyhf{} % 清空页眉页脚
+\fancyfoot[LE,RO]{\thepage} % 偶左奇右
+\fancyhead[CO]{\leftmark} % 奇数页章标题
+\fancyhead[CE]{xxx大学硕士论文} % 偶数页
+\fancypagestyle{plain}{
+\fancyhf{}
+\fancyhead[CE]{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+}
+\pagestyle{fancy}
+% -----参考文献/索引修改-----tocbibind, multicols
+
+
+% -----自定义命令-----
+\newtheorem{definition}{\hspace{1.5em} 定义}%[section]
+\newtheorem{lemma}{\hspace{1.5em} 引理}
+\newtheorem{theorem}{\hspace{1.5em} 定理}
+\newtheorem{corollary}{\hspace{1.5em} 推论}
+\newtheorem{proposition}{\hspace{1.5em} 命题}
+\newtheorem{remark}{\hspace{1.5em} 注}
+\newtheorem*{example}{\hspace{1.5em} 例}
+
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\ncite}[1]{\hspace{-0.5em}\cite{#1}}
+\newcommand{\ucite}[1]{{\rm{\textsuperscript{\cite{#1}}}}}
+\newenvironment{pf}[1][证明]{\textbf{#1:}}{\hfill$\blacksquare$\\}
+
+
+\endinput
