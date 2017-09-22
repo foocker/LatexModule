@@ -14,6 +14,25 @@
   bookmarksnumbered=true,%
   pdfstartview=FitH}
 
+\newcommand\myleaders{\titlerule*[0.5pc]{$\cdot$}}
+\titlecontents{chapter}
+  [0bp]
+  {}
+  {\contentspush{\thecontentslabel\space}}
+  {}{\myleaders\contentspage}
+\titlecontents{section}
+  [0bp]
+  {}
+  {\contentspush{\thecontentslabel\space}}
+  {}{\myleaders\contentspage}
+
+\ctexset{
+  chapter = {
+    name = {},
+    number = \arabic{chapter},
+    pagestyle = {empty},
+  },
+}
 % -----版式设置 -----fancyhdr
 % \pagestyle{myheadings} % 页眉内容可自定义,无页脚
 \fancyhf{} % 清空页眉页脚
