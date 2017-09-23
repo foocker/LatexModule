@@ -3,18 +3,24 @@
 
 \begin{document}
   \frontmatter
+  \include{state}
   \include{cnabstract}
   \include{enabstract}
   \tableofcontents
   
-  \ctexset{
-    chapter/titleformat = \raggedright,
+  %\ctexset{
+    % chapter/titleformat = \raggedright,
+    % section/titleformat = \raggedright,
     % name = \$,
     % number = \chinese{section}
-  }
+  %}
 
   % \listofsources
   \mainmatter
+  \ctexset{
+    chapter = {titleformat += \raggedright,
+    },
+  }
   \include{introduction}
 
   \include{chapter1}
@@ -23,5 +29,9 @@
   % \include{acknowledegement}
   % \include{enabstract}
   \include{reference}
+  
+  \backmatter
+  \include{acknowledge}
+  \include{achievements}
   \end{document}
 

@@ -14,24 +14,35 @@
   bookmarksnumbered=true,%
   pdfstartview=FitH}
 
+% 目录设置titletoc 
 \newcommand\myleaders{\titlerule*[0.5pc]{$\cdot$}}
 \titlecontents{chapter}
-[0bp]
-{}
-{\contentspush{\thecontentslabel\space}}
-{}{\myleaders\contentspage}
+  [0bp]
+  {}
+  {\contentspush{\thecontentslabel\space}}
+  {}{\myleaders\contentspage}
 \titlecontents{section}
-[0bp]{}
-{\contentspush{\thecontentslabel\space}}
-{}{\myleaders\contentspage}
+  [0bp]
+  {}
+  {\contentspush{\thecontentslabel\space}}
+  {}{\myleaders\contentspage}
 
 \ctexset{
   chapter = {
-  name = {},
-  number = \arabic{chapter},
-  pagestyle = {empty},
+    name = {},
+    number = \arabic{chapter},
+    pagestyle = {plain},
+    % titleformat += \raggedright,
   },
-}  
+  section={
+    titleformat += \raggedright,
+  }
+} 
+% 章节格式排版----
+
+\setcounter{tocdepth}{1}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 % -----版式设置 -----fancyhdr
 % \pagestyle{myheadings} % 页眉内容可自定义,无页脚
@@ -39,7 +50,7 @@
 \fancyfoot[LE,RO]{\thepage} % 偶左奇右
 \fancyhead[CO]{\leftmark} % 奇数页章标题
 \fancyhead[CE]{xxx大学硕士论文} % 偶数页
-\fancypagestyle{plain}{
+\fancypagestyle{empty}{
 \fancyhf{}
 \fancyhead[CE]{\thepage}
 \renewcommand\headrulewidth{0.4pt}
@@ -49,18 +60,29 @@
 
 
 % -----自定义命令-----
-\newtheorem{definition}{\hspace{1.5em} 定义}%[section]
-\newtheorem{lemma}{\hspace{1.5em} 引理}
-\newtheorem{theorem}{\hspace{1.5em} 定理}
-\newtheorem{corollary}{\hspace{1.5em} 推论}
-\newtheorem{proposition}{\hspace{1.5em} 命题}
-\newtheorem{remark}{\hspace{1.5em} 注}
-\newtheorem*{example}{\hspace{1.5em} 例}
+\newtheorem{definition}{\hspace{1.5em} 定义}[section]
+\newtheorem{lemma}{\hspace{1.5em} 引理}[section]
+\newtheorem{theorem}{\hspace{1.5em} 定理}[section]
+\newtheorem{corollary}{\hspace{1.5em} 推论}[section]
+\newtheorem{proposition}{\hspace{1.5em} 命题}[section]
+\newtheorem{remark}{\hspace{1.5em} 注}[section]
+\newtheorem{example}{\hspace{1.5em} 例}[section]
 
+\newcommand{\yihao}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoyihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
 \newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+
 \newcommand{\ncite}[1]{\hspace{-0.5em}\cite{#1}}
 \newcommand{\ucite}[1]{{\rm{\textsuperscript{\cite{#1}}}}}
 \newenvironment{pf}[1][证明]{\textbf{#1:}}{\hfill$\blacksquare$\\}
+
 
 
 \endinput
