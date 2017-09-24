@@ -1,37 +1,31 @@
-\documentclass{ctexbook}
+\documentclass[openany]{ctexbook}
 \usepackage{packages}
 
 \begin{document}
-  \frontmatter
-<<<<<<< HEAD
   \include{state}
-  \include{cnabstract}
-  \include{enabstract}
-  \tableofcontents
-  
-  %\ctexset{
-    % chapter/titleformat = \raggedright,
-    % section/titleformat = \raggedright,
-=======
-  \include{cnabstract}
-  \include{enabstract}
-  \tableofcontents
-  \ctexset{
-    chapter/titleformat = \raggedright,
->>>>>>> fb261c537c34b6532df0487710de48fa43f5cbe8
-    % name = \$,
-    % number = \chinese{section}
-  %}
 
-  % \listofsources
-  \mainmatter
-<<<<<<< HEAD
+  \frontmatter
+  \include{cnabstract}
+  \include{enabstract}
+
+  \pagestyle{main}
   \ctexset{
-    chapter = {titleformat += \raggedright,
+    chapter = {
+      format = \sanhao\bfseries\centering,
+      pagestyle = empty,
     },
   }
-=======
->>>>>>> fb261c537c34b6532df0487710de48fa43f5cbe8
+  \tableofcontents
+
+  \mainmatter
+  \ctexset{
+    chapter = {
+      format = \sanhao\bfseries\raggedright,
+      name = {},
+      number = \arabic{chapter},
+      pagestyle = chapterhead,
+    },
+  }
   \include{introduction}
 
   \include{chapter1}
@@ -39,10 +33,17 @@
   % \bibliography{/ref/npzn.bib}
   % \include{acknowledegement}
   % \include{enabstract}
+
+  \ctexset{
+    chapter = {
+      format = \sanhao\bfseries\centering,
+    },
+  }
   \include{reference}
-  
+
   \backmatter
   \include{acknowledge}
   \include{achievements}
-  \end{document}
+
+\end{document}
 

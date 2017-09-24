@@ -14,10 +14,6 @@
   bookmarksnumbered=true,%
   pdfstartview=FitH}
 
-<<<<<<< HEAD
-% 目录设置titletoc 
-=======
->>>>>>> fb261c537c34b6532df0487710de48fa43f5cbe8
 \newcommand\myleaders{\titlerule*[0.5pc]{$\cdot$}}
 \titlecontents{chapter}
   [0bp]
@@ -30,41 +26,19 @@
   {\contentspush{\thecontentslabel\space}}
   {}{\myleaders\contentspage}
 
-\ctexset{
-  chapter = {
-    name = {},
-    number = \arabic{chapter},
-<<<<<<< HEAD
-    pagestyle = {plain},
-    % titleformat += \raggedright,
-  },
-  section={
-    titleformat += \raggedright,
-  }
-} 
-% 章节格式排版----
-
-\setcounter{tocdepth}{1}
-
-\clearpage{\pagestyle{empty}\cleardoublepage}
-
-=======
-    pagestyle = {empty},
-  },
-}
->>>>>>> fb261c537c34b6532df0487710de48fa43f5cbe8
 % -----版式设置 -----fancyhdr
-% \pagestyle{myheadings} % 页眉内容可自定义,无页脚
-\fancyhf{} % 清空页眉页脚
-\fancyfoot[LE,RO]{\thepage} % 偶左奇右
-\fancyhead[CO]{\leftmark} % 奇数页章标题
-\fancyhead[CE]{xxx大学硕士论文} % 偶数页
-\fancypagestyle{empty}{
-\fancyhf{}
-\fancyhead[CE]{\thepage}
-\renewcommand\headrulewidth{0.4pt}
+\fancypagestyle{main}{
+  \fancyhf{} % 清空页眉页脚
+  \fancyfoot[LE,RO]{\thepage} % 偶左奇右
+  \fancyhead[CO]{\leftmark} % 奇数页章标题
+  \fancyhead[CE]{xxx大学硕士论文} % 偶数页
 }
-\pagestyle{fancy}
+\fancypagestyle{chapterhead}{
+  \fancyhf{}
+  \fancyfoot[LE,RO]{\thepage}
+  \renewcommand\headrulewidth{0pt}
+}
+\pagestyle{empty}
 % -----参考文献/索引修改-----tocbibind, multicols
 
 
