@@ -1,2 +1,3 @@
 # LatexModule
-thesis module and other
+Master of Mathematics thesis module for Sichuan Normal University.
+
