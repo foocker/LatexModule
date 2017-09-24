@@ -26,22 +26,27 @@
       pagestyle = chapterhead,
     },
   }
-  \include{introduction}
 
+  \ctexset{
+    section = {
+      format = \sanhao\bfseries\raggedright,
+    },
+  }
+  \include{introduction}
   \include{chapter1}
   \include{chapter2}
   % \bibliography{/ref/npzn.bib}
-  % \include{acknowledegement}
-  % \include{enabstract}
 
   \ctexset{
     chapter = {
       format = \sanhao\bfseries\centering,
     },
   }
+
   \include{reference}
 
   \backmatter
+
   \include{acknowledge}
   \include{achievements}
 
